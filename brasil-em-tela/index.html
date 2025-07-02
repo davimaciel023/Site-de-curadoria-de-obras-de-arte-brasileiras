@@ -1,33 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brasil em Tela</title>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="img/logo.png" alt="">
-        </div>
-        <div class="menu">
+        <div class="container">
+            <img src="img/logo.png" alt="Logo Brasil em Tela" class="logo" />
             <nav>
-                <ul>
-                    <a href="artistas.html">
-                        <li>Artistas</li>
-                    </a>
-                    <a href="obras.html">
-                        <li>Obras</li>
-                    </a>
-                    <a href="historiaDaArte.html">
-                        <li>História</li>
-                    </a>
-                    <a href="contato.html">
-                        <li>Contato</li>
-                    </a>
+                <ul class="menu">
+                <li><a href="artistas.html">Artistas</a></li>
+                <li><a href="obras.html">Obras</a></li>
+                <li><a href="historia-da-arte.html">História</a></li>
+                <li><a href="curadoria.html">Curadoria</a></li>
+                <li><a href="exposicoes.html">Exposições</a></li>
+                <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
+    <section class="hero">
+        <img src="img/hero.jpg" alt="Imagem destaque da arte brasileira" class="hero-image" />
+        <div class="hero-texto">
+            <h1>Brasil em Tela</h1>
+            <p>Uma imersão na arte brasileira</p>
+            <a href="artistas.html" class="btn">Conheça os Artistas</a>
+        </div>
+    </section>
+
+    <section class="destaques">
+        <h2>Destaques da Semana</h2>
+        <div class="galeria">
+            <div class="card">
+                <img src="img/obra1.jpg" alt="Obra 1" />
+                <p>Abaporu – Tarsila do Amaral</p>
+            </div>
+            <div class="card">
+                <img src="img/obra2.jpg" alt="Obra 2" />
+                <p>Retirantes – Cândido Portinari</p>
+            </div>
+            <div class="card">
+                <img src="img/obra3.jpg" alt="Obra 3" />
+                <p>O Mamoeiro – Anita Malfatti</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Brasil em Tela. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
