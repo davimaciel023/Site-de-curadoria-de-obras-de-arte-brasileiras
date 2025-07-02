@@ -1,172 +1,203 @@
 :root {
-  --cor-fundo: #FDF6EC;
-  --cor-primaria: #144552;
-  --cor-secundaria: #0B8457;
-  --cor-destaque: #F9A620;
-  --cor-vermelho: #C84B31;
-  --cor-branco: #FFFFFF;
-  --cor-texto: #222222;
+    --cor-fundo: #FDF6EC;
+    --cor-primaria: #144552;
+    --cor-secundaria: #0B8457;
+    --cor-destaque: #F9A620;
+    --cor-vermelho: #C84B31;
+    --cor-branco: #FFFFFF;
+    --cor-texto: #222222;
 
-  --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: var(--fonte-principal);
-  background-color: var(--cor-fundo);
-  color: var(--cor-texto);
-  line-height: 1.6;
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
 }
 
 /* ===== Header ===== */
 header {
-  background-color: var(--cor-primaria);
-  padding: 20px 0;
-  color: var(--cor-branco);
+    background-color: var(--cor-primaria);
+    padding: 20px 0;
+    color: var(--cor-branco);
 }
 
 .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-  height: 60px;
+    height: 60px;
 }
 
 .menu {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
 .menu li a {
-  text-decoration: none;
-  color: var(--cor-branco);
-  font-weight: bold;
-  transition: color 0.3s;
+    text-decoration: none;
+    color: var(--cor-branco);
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
 .menu li a:hover {
-  color: var(--cor-destaque);
+    color: var(--cor-destaque);
 }
 
 /* ===== Hero Section ===== */
 .hero {
-  position: relative;
-  text-align: center;
-  color: var(--cor-branco);
+    position: relative;
+    text-align: center;
+    color: var(--cor-branco);
 }
 
 .hero-image {
-  width: 100%;
-  max-height: 450px;
-  object-fit: cover;
-  filter: brightness(0.6);
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    filter: brightness(0.4);
 }
 
 .hero-texto {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .hero-texto h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+    font-size: 3rem;
+    margin-bottom: 10px;
 }
 
 .hero-texto p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
 }
 
 .btn {
-  padding: 12px 24px;
-  background-color: var(--cor-destaque);
-  color: var(--cor-primaria);
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.3s;
+    padding: 12px 24px;
+    background-color: var(--cor-destaque);
+    color: var(--cor-primaria);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s;
 }
 
 .btn:hover {
-  background-color: var(--cor-secundaria);
-  color: var(--cor-branco);
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branco);
 }
 
 /* ===== Destaques ===== */
 .destaques {
-  padding: 40px 20px;
-  text-align: center;
+    padding: 40px 20px;
+    text-align: center;
 }
 
 .destaques h2 {
-  font-size: 2rem;
-  color: var(--cor-primaria);
-  margin-bottom: 30px;
+    font-size: 2rem;
+    color: var(--cor-primaria);
+    margin-bottom: 30px;
 }
 
 .galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
 }
 
 .card {
-  background-color: var(--cor-branco);
-  border: 2px solid var(--cor-vermelho);
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    background-color: var(--cor-branco);
+    border: 2px solid var(--cor-vermelho);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .card img {
-  width: 100%;
-  border-radius: 5px;
-  margin-bottom: 10px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .card p {
-  font-weight: bold;
-  color: var(--cor-primaria);
+    font-weight: bold;
+    color: var(--cor-primaria);
 }
 
 /* ===== Footer ===== */
 footer {
-  background-color: var(--cor-primaria);
-  color: var(--cor-branco);
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
 }
+
+
+/* ===== Página: Artistas ===== */
+.destaques p {
+    max-width: 700px;
+    margin: 10px auto 40px auto;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: var(--cor-texto);
+    line-height: 1.4;
+}
+
+.card p strong {
+    display: block;
+    font-size: 1.05rem;
+    color: var(--cor-vermelho);
+    margin-bottom: 5px;
+}
+
+.card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid var(--cor-primaria);
+}
+
 
 /* ===== Responsivo ===== */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    gap: 15px;
-  }
+    .container {
+        flex-direction: column;
+        gap: 15px;
+    }
 
-  .hero-texto h1 {
-    font-size: 2rem;
-  }
+    .hero-texto h1 {
+        font-size: 2rem;
+    }
 
-  .menu {
-    flex-direction: column;
-    gap: 10px;
-  }
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
