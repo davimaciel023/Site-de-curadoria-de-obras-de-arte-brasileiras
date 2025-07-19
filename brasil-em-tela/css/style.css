@@ -497,23 +497,60 @@ footer {
     color: var(--cor-branco);
 }
 
+/* ===== Menu Hamburguer Responsivo ===== */
+.hamburguer {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
 
+.hamburguer span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--cor-branco);
+    transition: all 0.3s;
+}
 
-
-/* ===== Responsivo ===== */
+/* Responsivo geral */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .hero-texto h1 {
-        font-size: 2rem;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .menu {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
         flex-direction: column;
-        gap: 10px;
+        background-color: var(--cor-primaria);
+        display: none;
+        padding: 20px 0;
+        z-index: 999;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .hamburguer {
+        display: flex;
+    }
+
+    .galeria,
+    .galeria-obras,
+    .curadoria-blocos,
+    .lista-exposicoes {
+        grid-template-columns: 1fr !important;
+    }
+
+    .obra-destaque-conteudo {
+        flex-direction: column;
+    }
+
+    .formulario-contato {
+        padding: 20px;
     }
 }
-
