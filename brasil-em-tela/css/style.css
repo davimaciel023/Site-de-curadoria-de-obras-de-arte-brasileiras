@@ -308,6 +308,64 @@ footer {
     line-height: 1.6;
 }
 
+/* ===== Página: Curadoria ===== */
+.pagina-curadoria {
+    padding: 50px 20px;
+    background-color: var(--cor-fundo);
+    text-align: center;
+}
+
+.curadoria-intro h2 {
+    font-size: 2rem;
+    color: var(--cor-vermelho);
+    margin-bottom: 20px;
+}
+
+.curadoria-intro p {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.curadoria-blocos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.bloco-curador {
+    background-color: var(--cor-branco);
+    border: 1px solid var(--cor-secundaria);
+    border-radius: 10px;
+    padding: 25px 20px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.bloco-curador:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bloco-curador img {
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+.bloco-curador h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+}
+
+.bloco-curador p {
+    font-size: 0.95rem;
+    color: var(--cor-texto);
+    line-height: 1.5;
+}
+
 
 /* ===== Responsivo ===== */
 @media (max-width: 768px) {
