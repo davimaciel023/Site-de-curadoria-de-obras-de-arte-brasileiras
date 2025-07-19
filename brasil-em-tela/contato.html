@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contato - Brasil em Tela</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="img/logo.png" alt="Logo Brasil em Tela" class="logo" />
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="artistas.html">Artistas</a></li>
+                    <li><a href="obras.html">Obras</a></li>
+                    <li><a href="historia-da-arte.html">História</a></li>
+                    <li><a href="curadoria.html">Curadoria</a></li>
+                    <li><a href="exposicoes.html">Exposições</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pagina-contato">
+        <section class="contato-intro">
+            <h2>Fale Conosco</h2>
+            <p>Tem alguma dúvida, sugestão ou deseja indicar uma obra? Preencha o formulário abaixo e entraremos em contato com você.</p>
+        </section>
+
+        <section class="formulario-contato">
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required />
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="assunto">Assunto:</label>
+                <input type="text" id="assunto" name="assunto" />
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Brasil em Tela. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

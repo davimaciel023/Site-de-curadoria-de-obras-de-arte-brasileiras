@@ -247,7 +247,7 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(20, 69, 82, 0.85); /* var(--cor-primaria) com transparência */
+    background-color: rgba(20, 69, 82, 0.85);
     color: var(--cor-branco);
     padding: 10px;
     opacity: 0;
@@ -429,6 +429,74 @@ footer {
     font-size: 1rem;
     margin-bottom: 5px;
 }
+
+/* ===== Página: Contato ===== */
+.pagina-contato {
+    padding: 50px 20px;
+    background-color: var(--cor-fundo);
+    text-align: center;
+}
+
+.contato-intro h2 {
+    color: var(--cor-vermelho);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.contato-intro p {
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.formulario-contato {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--cor-branco);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--cor-secundaria);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.formulario-contato form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formulario-contato label {
+    font-weight: bold;
+    color: var(--cor-primaria);
+    text-align: left;
+}
+
+.formulario-contato input,
+.formulario-contato textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    resize: none;
+}
+
+.formulario-contato button {
+    background-color: var(--cor-destaque);
+    color: var(--cor-primaria);
+    padding: 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.formulario-contato button:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branco);
+}
+
 
 
 
