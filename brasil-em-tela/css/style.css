@@ -259,6 +259,56 @@ footer {
     opacity: 1;
 }
 
+/* ===== Página: História da Arte ===== */
+.pagina-historia {
+    padding: 50px 20px;
+    background-color: var(--cor-fundo);
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 30px;
+    border-left: 4px solid var(--cor-primaria);
+}
+
+.timeline-titulo {
+    text-align: center;
+    color: var(--cor-vermelho);
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.linha-tempo-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 20px;
+}
+
+.ponto {
+    width: 16px;
+    height: 16px;
+    background-color: var(--cor-destaque);
+    border-radius: 50%;
+    position: absolute;
+    left: -10px;
+    top: 6px;
+}
+
+.conteudo-tempo h3 {
+    color: var(--cor-primaria);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.conteudo-tempo p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+
 /* ===== Responsivo ===== */
 @media (max-width: 768px) {
     .container {
