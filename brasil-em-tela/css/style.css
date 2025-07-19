@@ -366,6 +366,71 @@ footer {
     line-height: 1.5;
 }
 
+/* ===== Página: Exposições ===== */
+.pagina-exposicoes {
+    padding: 50px 20px;
+    background-color: var(--cor-fundo);
+    text-align: center;
+}
+
+.intro-exposicoes h2 {
+    font-size: 2rem;
+    color: var(--cor-vermelho);
+    margin-bottom: 10px;
+}
+
+.intro-exposicoes p {
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.lista-exposicoes {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.exposicao-card {
+    background-color: var(--cor-branco);
+    border: 1px solid var(--cor-secundaria);
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    text-align: left;
+}
+
+.exposicao-card:hover {
+    transform: scale(1.01);
+}
+
+.exposicao-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.exposicao-info {
+    padding: 20px;
+}
+
+.exposicao-info h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+}
+
+.exposicao-info p {
+    color: var(--cor-texto);
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+
 
 /* ===== Responsivo ===== */
 @media (max-width: 768px) {
