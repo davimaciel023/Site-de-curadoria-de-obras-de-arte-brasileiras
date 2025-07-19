@@ -186,65 +186,78 @@ footer {
 
 
 /* ===== Página: Obras de Arte ===== */
-.pagina-obras {
+.obra-destaque {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
     padding: 40px 20px;
     text-align: center;
-    background-color: var(--cor-fundo);
 }
 
-.obras-titulo {
-    color: var(--cor-vermelho);
-    font-size: 2rem;
+.obra-destaque-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.obras-descricao {
-    max-width: 700px;
-    margin: 10px auto 40px auto;
-    font-size: 1.1rem;
-    color: #444;
+.obra-destaque-conteudo img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    border: 4px solid var(--cor-destaque);
 }
 
-.obras-galeria {
+.texto-obra h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--cor-destaque);
+}
+
+.galeria-obras {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 20px;
+    padding: 40px 20px;
+    background-color: var(--cor-fundo);
 }
 
-.obra-card {
-    background-color: var(--cor-branco);
-    border: 1px solid var(--cor-secundaria);
-    border-radius: 10px;
-    padding: 15px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.obra-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.obra-card img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
+.obra-hover {
+    position: relative;
+    overflow: hidden;
     border-radius: 8px;
-    margin-bottom: 10px;
-    border: 2px solid var(--cor-destaque);
+    cursor: pointer;
+    transition: transform 0.3s;
 }
 
-.obra-card p {
-    font-size: 0.95rem;
-    color: var(--cor-texto);
-    line-height: 1.4;
+.obra-hover img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
 }
 
-.obra-card p strong {
-    display: block;
-    font-size: 1.1rem;
-    color: var(--cor-primaria);
-    margin-bottom: 5px;
+.obra-hover:hover img {
+    transform: scale(1.05);
 }
 
+.info-hover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(20, 69, 82, 0.85); /* var(--cor-primaria) com transparência */
+    color: var(--cor-branco);
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-align: center;
+}
+
+.obra-hover:hover .info-hover {
+    opacity: 1;
+}
 
 /* ===== Responsivo ===== */
 @media (max-width: 768px) {

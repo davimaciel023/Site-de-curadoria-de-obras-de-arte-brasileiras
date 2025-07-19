@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Obras de Arte - Brasil em Tela</title>
-    <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
     <header>
@@ -24,32 +24,44 @@
     </header>
 
     <main class="pagina-obras">
-        <section class="obras-intro">
-        <h2 class="obras-titulo">Obras de Arte Brasileiras</h2>
-        <p class="obras-descricao">
-            Explore obras que representam diferentes momentos, estilos e sentimentos da arte nacional.
-        </p>
+        <section class="obra-destaque">
+            <h2 class="obras-titulo">Obra do Mês</h2>
+            <div class="obra-destaque-conteudo">
+            <img src="img/abaporu.jpg" alt="Abaporu - Tarsila do Amaral" />
+            <div class="texto-obra">
+                <h3>Abaporu</h3>
+                <p>Tarsila do Amaral – 1928<br>Ícone do modernismo brasileiro, símbolo da antropofagia cultural.</p>
+            </div>
+            </div>
         </section>
 
-        <section class="obras-galeria">
-        <div class="obra-card">
-            <img src="img/abaporu.jpg" alt="Abaporu - Tarsila do Amaral" />
-            <p><strong>Abaporu</strong><br />Tarsila do Amaral – 1928</p>
-        </div>
-        <div class="obra-card">
-            <img src="img/retirantes.jpg" alt="Retirantes - Cândido Portinari" />
-            <p><strong>Retirantes</strong><br />Cândido Portinari – 1944</p>
-        </div>
-        <div class="obra-card">
+        <section class="galeria-obras">
+            <div class="obra-hover">
+            <img src="img/retirantes.jpg" alt="Retirantes - Portinari" />
+            <div class="info-hover">
+                <h4>Retirantes</h4>
+                <p>Cândido Portinari</p>
+            </div>
+            </div>
+
+            <div class="obra-hover">
             <img src="img/o-mamoeiro.jpg" alt="O Mamoeiro - Anita Malfatti" />
-            <p><strong>O Mamoeiro</strong><br />Anita Malfatti – 1927</p>
-        </div>
-        <div class="obra-card">
-            <img src="img/operarios.jpg" alt="Operários - Tarsila do Amaral" />
-            <p><strong>Operários</strong><br />Tarsila do Amaral – 1933</p>
-        </div>
+            <div class="info-hover">
+                <h4>O Mamoeiro</h4>
+                <p>Anita Malfatti</p>
+            </div>
+            </div>
+
+            <div class="obra-hover">
+            <img src="img/operarios.jpg" alt="Operários - Tarsila" />
+            <div class="info-hover">
+                <h4>Operários</h4>
+                <p>Tarsila do Amaral</p>
+            </div>
+            </div>
         </section>
     </main>
+
 
     <footer>
         <p>&copy; 2025 Brasil em Tela. Todos os direitos reservados.</p>
