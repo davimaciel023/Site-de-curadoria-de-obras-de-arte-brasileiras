@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Obras de Arte - Brasil em Tela</title>
-    <link rel="stylesheet" href="css/style.css" />
-</head>
-<script src="js/menu.js"></script>
-<body>
-    <header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Obras de Arte - Brasil em Tela</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="js/menu.js" defer></script>
+        <script src="js/galeria.js" defer></script>
+    </head>
+    <body>
+        <header>
         <div class="container">
             <img src="img/logo.png" alt="Logo Brasil em Tela" class="logo" />
-            
+
             <div class="hamburguer" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
 
             <nav>
                 <ul class="menu">
                     <li><a href="index.html">Início</a></li>
                     <li><a href="artistas.html">Artistas</a></li>
-                    <li><a href="obras.html">Obras</a></li>
+                    <li><a href="obras.html" class="active">Obras</a></li>
                     <li><a href="historiaDaArte.html">História</a></li>
                     <li><a href="curadoria.html">Curadoria</a></li>
                     <li><a href="exposicoes.html">Exposições</a></li>
@@ -30,50 +29,116 @@
                 </ul>
             </nav>
         </div>
-    </header>
+        </header>
 
-    <main class="pagina-obras">
+        <main class="pagina-obras">
         <section class="obra-destaque">
             <h2 class="obras-titulo">Obra do Mês</h2>
             <div class="obra-destaque-conteudo">
-            <img src="img/abaporu.png" alt="Abaporu - Tarsila do Amaral" />
-            <div class="texto-obra">
-                <h3>Abaporu</h3>
-                <p>Tarsila do Amaral – 1928<br>Ícone do modernismo brasileiro, símbolo da antropofagia cultural.</p>
+                <img src="img/abaporu.png" alt="Abaporu - Tarsila do Amaral" />
+                <div class="texto-obra">
+                    <h3>Abaporu</h3>
+                    <p>
+                    Tarsila do Amaral – 1928<br />
+                    Ícone do modernismo brasileiro, símbolo da antropofagia cultural.
+                    </p>
+                </div>
             </div>
+        </section>
+
+        <section class="controles-topo">
+            <div class="lado-esq">
+                <h2 class="titulo-pagina">Obras</h2>
+                <span id="contadorFavoritos" class="badge-fav" aria-live="polite" title="Minhas obras favoritas">❤️ 0</span>
+            </div>
+
+            <div class="lado-dir">
+                <label class="toggle-favs">
+                    <input id="somenteFavoritos" type="checkbox" />
+                    <span>Mostrar apenas favoritos</span>
+                </label>
             </div>
         </section>
 
-        <section class="galeria-obras">
-            <div class="obra-hover">
-            <img src="img/retirantes.png" alt="Retirantes - Portinari" />
-            <div class="info-hover">
-                <h4>Retirantes</h4>
-                <p>Cândido Portinari</p>
-            </div>
+        <section class="controles-obras" aria-label="Controles da galeria de obras">
+            <div class="campo">
+                <label for="busca">Buscar</label>
+                <input id="busca" type="search" placeholder="Título, artista, ano, movimento..." autocomplete="off" />
             </div>
 
-            <div class="obra-hover">
-            <img src="img/o_mamoeiro.png" alt="O Mamoeiro - Anita Malfatti" />
-            <div class="info-hover">
-                <h4>O Mamoeiro</h4>
-                <p>Anita Malfatti</p>
-            </div>
+            <div class="campo">
+                <label for="filtroArtista">Artista</label>
+                <select id="filtroArtista">
+                    <option value="">Todos</option>
+                </select>
             </div>
 
-            <div class="obra-hover">
-            <img src="img/Operarios.jpg" alt="Operários - Tarsila" />
-            <div class="info-hover">
-                <h4>Operários</h4>
-                <p>Tarsila do Amaral</p>
+            <div class="campo">
+                <label for="filtroMovimento">Movimento</label>
+                <select id="filtroMovimento">
+                    <option value="">Todos</option>
+                </select>
             </div>
+
+            <div class="campo faixa-ano">
+                <label>Período</label>
+                <div class="anos">
+                    <input id="anoMin" type="number" inputmode="numeric" placeholder="mín." />
+                    <span class="separador">—</span>
+                    <input id="anoMax" type="number" inputmode="numeric" placeholder="máx." />
+                </div>
+            </div>
+
+            <div class="campo">
+                <label for="ordenar">Ordenar</label>
+                <select id="ordenar">
+                    <option value="relevancia">Relevância</option>
+                    <option value="titulo_asc">Título (A–Z)</option>
+                    <option value="titulo_desc">Título (Z–A)</option>
+                    <option value="ano_asc">Ano (mais antigo)</option>
+                    <option value="ano_desc">Ano (mais recente)</option>
+                    <option value="artista_asc">Artista (A–Z)</option>
+                    <option value="artista_desc">Artista (Z–A)</option>
+                </select>
             </div>
         </section>
-    </main>
 
+        <p id="contadorResultados" class="contador-resultados" aria-live="polite"></p>
 
-    <footer>
-        <p>&copy; 2025 Brasil em Tela. Todos os direitos reservados.</p>
-    </footer>
-</body>
+        <section class="galeria-obras" id="artGallery" aria-live="polite"></section>
+        </main>
+
+        <div
+        id="artModal"
+        class="modal"
+        aria-hidden="true"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="artModalTitle"
+        >
+            <div class="modal-backdrop" data-close></div>
+            <div class="modal-content" role="document">
+                <button class="modal-close" type="button" data-close aria-label="Fechar">×</button>
+
+                <figure class="modal-figure">
+                    <button class="nav prev" type="button" id="prevBtn" aria-label="Obra anterior">‹</button>
+                    <img id="modalImage" alt="" />
+                    <button class="nav next" type="button" id="nextBtn" aria-label="Próxima obra">›</button>
+                    <figcaption id="artModalTitle" class="modal-title"></figcaption>
+                </figure>
+
+                <div class="modal-details">
+                    <p><strong>Artista:</strong> <span id="modalArtist"></span></p>
+                    <p><strong>Ano:</strong> <span id="modalYear"></span></p>
+                    <p><strong>Movimento:</strong> <span id="modalMovement"></span></p>
+                    <p id="modalDesc"></p>
+                    <button id="favToggleBtn" class="btn-outline" type="button" aria-pressed="false">❤️ Favoritar</button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Brasil em Tela. Todos os direitos reservados.</p>
+        </footer>
+    </body>
 </html>
