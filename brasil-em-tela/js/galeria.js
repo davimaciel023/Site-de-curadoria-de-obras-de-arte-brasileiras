@@ -1,10 +1,3 @@
-/* =========================================================
-   GALERIA — Brasil em Tela
-   Estrutura simples, legível e organizada
-   ========================================================= */
-
-/* =============== 1) DADOS =============== */
-
 const OBRAS = [
     {
         id: "ob-001",
@@ -39,8 +32,6 @@ const OBRAS = [
 ]
 
 
-/* =============== 2) ESTADO =============== */
-
 const CHAVE_STORAGE_FAV = "favoritos"
 
 const estado = {
@@ -59,14 +50,9 @@ const estado = {
     }
 }
 
-
-/* =============== 3) ELEMENTOS =============== */
-
-// Grid
 const elGrade = document.getElementById("artGallery")
 const elContadorResultados = document.getElementById("contadorResultados")
 
-// Controles
 const elBusca = document.getElementById("busca")
 const elFiltroArtista = document.getElementById("filtroArtista")
 const elFiltroMovimento = document.getElementById("filtroMovimento")
@@ -76,7 +62,6 @@ const elOrdenar = document.getElementById("ordenar")
 const elSomenteFavs = document.getElementById("somenteFavoritos")
 const elContadorFavs = document.getElementById("contadorFavoritos")
 
-// Modal
 const elModal = document.getElementById("artModal")
 const elModalImg = document.getElementById("modalImage")
 const elModalTitulo = document.getElementById("artModalTitle")
@@ -89,7 +74,6 @@ const elBtnPrev = document.getElementById("prevBtn")
 const elBtnNext = document.getElementById("nextBtn")
 
 
-/* =============== 4) HELPERS =============== */
 
 function salvarFavoritosNoStorage() {
     localStorage.setItem(CHAVE_STORAGE_FAV, JSON.stringify([...estado.favoritos]))
@@ -130,9 +114,6 @@ function popularSelectCom(valores, selectEl) {
         selectEl.appendChild(opt)
     })
 }
-
-
-/* =============== 5) FILTRAGEM E ORDENAÇÃO =============== */
 
 function aplicarFiltros() {
     const f = estado.filtros
@@ -191,8 +172,6 @@ function ordenarLista(lista, criterio) {
     }
 }
 
-
-/* =============== 6) RENDERIZAÇÃO =============== */
 
 function criarCard(obra, indice) {
     const card = document.createElement("div")
@@ -255,14 +234,11 @@ function renderizarGrade() {
     posRenderAjusteGrade()
 }
 
-/* === ajusta a grade para o caso de apenas 1 obra === */
 function posRenderAjusteGrade() {
     if (estado.filtradas.length === 1) elGrade.classList.add("single-item")
     else elGrade.classList.remove("single-item")
 }
 
-
-/* =============== 7) FAVORITOS =============== */
 
 function alternarFavorito(id) {
     if (estado.favoritos.has(id)) estado.favoritos.delete(id)
@@ -272,7 +248,6 @@ function alternarFavorito(id) {
 }
 
 
-/* =============== 8) MODAL =============== */
 
 function preencherModal(obra) {
     elModalImg.src = obra.imagem
@@ -304,8 +279,6 @@ function obraAtual() {
     return estado.filtradas[estado.indiceAtual]
 }
 
-
-/* =============== 9) EVENTOS (MODAL) =============== */
 
 document.querySelectorAll("[data-close]").forEach(function (el) {
     el.addEventListener("click", fecharModal)
@@ -356,8 +329,6 @@ elModalFav.addEventListener("click", function () {
 })
 
 
-/* =============== 10) EVENTOS (CONTROLES) =============== */
-
 elBusca?.addEventListener("input", function () {
     estado.filtros.termo = this.value.trim()
     aplicarFiltros()
@@ -393,8 +364,6 @@ elSomenteFavs?.addEventListener("change", function () {
     aplicarFiltros()
 })
 
-
-/* =============== 11) BOOT =============== */
 
 document.addEventListener("DOMContentLoaded", function () {
     popularSelectCom(OBRAS.map((o) => o.artista), elFiltroArtista)

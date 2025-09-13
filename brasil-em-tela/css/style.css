@@ -826,6 +826,13 @@ img[loading="lazy"] {
     resize: none;
 }
 
+.formulario a {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--cor-primaria);
+    transition: color 0.3s;
+}
+
 .formulario button {
     background-color: var(--cor-destaque);
     color: var(--cor-primaria);
